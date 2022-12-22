@@ -1,11 +1,9 @@
-@import "normalize.css";
+@import "reset.css";
 
 @import "./scss/fonts.scss";
-@import "./scss/reset.scss";
-
-@import "./scss/theme/colors.scss";
-@import "./scss/theme/typography.scss";
-@import "./scss/theme/breakpoints.scss";
+@import "./scss/colors.scss";
+@import "./scss/typography.scss";
+@import "./scss/breakpoints.scss";
 
 html {
   line-height: $mainLineHeight;

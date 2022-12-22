@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const fs = require("fs");
+const Dotenv = require('dotenv-webpack');
 
 const PATHS = {
   src: path.resolve(__dirname, "./src"),
@@ -72,14 +72,6 @@ module.exports = {
             loader: "sass-loader",
             options: { sourceMap: true },
           },
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                config: path.resolve(__dirname, "postcss.config.js"),
-              },
-            },
-          },
         ],
       },
       {
@@ -89,6 +81,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       template: `${PATHS.src}/index.html`,
       filename: `${PATHS.dist}/index.html`,

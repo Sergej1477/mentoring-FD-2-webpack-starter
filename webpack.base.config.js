@@ -19,7 +19,6 @@ module.exports = {
   output: {
     filename: "js/[name].[hash].js",
     path: PATHS.dist,
-    publicPath: "/",
   },
   optimization: {
     splitChunks: {
@@ -38,15 +37,12 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
-        generator: {
-          filename: "[path][name][ext]",
-        },
       },
       {
         test: /\.(woff2?|ttf|eot)(\?v=\w+)?$/,
         type: "asset/resource",
         generator: {
-          filename: "[path][name][ext]",
+          filename: "assets/fonts/[name][ext]",
         },
       },
       {
@@ -93,7 +89,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: `${PATHS.src}/assets/images`, to: "assets/images" },
-        { from: `${PATHS.src}/assets/fonts`, to: "assets/fonts" },
         { from: `${PATHS.src}/public`, to: "" },
       ],
     }),

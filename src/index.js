@@ -1,3 +1,3 @@
-import "./main.scss";
+import './main.scss';
 
-console.log("Hello IT-academy student 🚀");
+console.log('Hello IT-academy student 🚀');

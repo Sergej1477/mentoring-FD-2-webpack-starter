@@ -6,8 +6,22 @@
 @import './scss/breakpoints.scss';
 @import './scss/mixins.scss';
 
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 html {
-  line-height: $mainLineHeight;
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
@@ -19,6 +33,189 @@ body {
   font-family: $mainFont;
   font-size: $mainFontSize;
   font-weight: $mainFontWeight;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.container {
+  max-width: 1146px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.btn {
+  border-radius: 4px;
+  border: none;
+  padding: 15px 30px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-green {
+  background-color: $primary-color;
+  color: $default-color;
+}
+
+.top-navigation {
+  margin-top: 45px;
+  @include flex-container-m();
+}
+
+.header {
+  background-color: $secondary-color;
+  border-top: 1px solid $secondary-color;
+  background-image: url('./assets/images/images/header-lines.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  min-height: 850px;
+}
+
+.navigation-link {
+  line-height: 19px;
+  font-weight: 500;
+  color: $link-color;
+  opacity: 0.6;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.navigation-link-active {
+  opacity: 1;
+}
+
+.left-block {
+  margin-top: 116px;
+  width: 425px;
+}
+
+.h1 {
+  font-weight: 700;
+  font-size: 61px;
+}
+
+.sub-title {
+  font-weight: 600;
+  font-size: 22px;
+  color: $primary-color;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.sub-title::after {
+  content: '';
+  width: 50px;
+  height: 17px;
+  display: block;
+  background-image: url('./assets/images/images/nike-logo-green.png');
+  position: absolute;
+  right: -65px;
+  top: -10px;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.body {
+  color: $link-color;
+  opacity: .7;
+}
+
+.main-image {
+  transform: rotate(-15deg);
+  display: none;
+}
+
+.main-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-preview-btn {
+  display: none;
+}
+
+.img-preview img {
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+.img-preview-btn:checked~.main-image {
+  display: block;
+}
+
+.img-preview-btn:checked~img {
+  border: 2px solid $default-color;
+}
+
+.promo {
+  @include flex-container-m();
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.promo-link {
+  color: $primary-color;
+}
+
+.second-description {
+  margin-top: 10px;
+}
+
+.logo-svg path {
+  fill: $logo-color;
+}
+
+.right-block {
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  right: -15%;
+  top: 5%;
+}
+
+.img-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.burger-menu {
+  background: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: relative;
+  z-index: 1;
+}
+
+.top-navigation-mobile {
+  display: none;
+  background-color: $mobile-color;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  height: 700px;
+  align-items: center;
+}
+
+.item {
+  background-color: $primary-color;
+  padding: 15px;
 }
